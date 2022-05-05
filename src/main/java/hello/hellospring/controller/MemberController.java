@@ -32,6 +32,7 @@ public class MemberController {
         member.setName(form.getName());
         member.setPassword(form.getPassword());
 
+        System.out.println(member.getName());
         memberService.join(member);
 
         return "redirect:/";

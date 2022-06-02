@@ -5,6 +5,8 @@ import hello.hellospring.repository.BoardRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -20,8 +22,11 @@ public class BoardService {
         boardRepository.save(board);
         return board.getId();
     }
-
-
-
+    public List<Board> findBoards(){
+        return boardRepository.findAll();
+    }
+    public Optional<Board> findOne(Long boardId){
+        return boardRepository.findById(boardId);
+    }
 
 }

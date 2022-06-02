@@ -1,22 +1,8 @@
-package hello.hellospring.domain;
+package hello.hellospring.controller;
 
-
-
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.StringTokenizer;
 
-@Entity
-public class Board {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // PK
-
+public class BoardForm {
     private String title; // 제목
 
     private String content; // 내용
@@ -27,15 +13,8 @@ public class Board {
 
     private char deleteYn; // 삭제 여부
 
-    private LocalDateTime createdDate; // 생성일
+    private LocalDateTime createdDate = LocalDateTime.now(); // 생성일
 
-
-    public Long getId(){
-        return id;
-    }
-    public void setId(Long id){
-        this.id = id;
-    }
 
     public String getTitle(){
         return title;
@@ -71,12 +50,4 @@ public class Board {
     public void setDeleteYn(char deleteYn){
         this.deleteYn = deleteYn;
     }
-
-    public LocalDateTime getCreatedDate(){
-        return createdDate;
-    }
-    public void setCreatedDate(LocalDateTime createdDate){
-        this.createdDate = createdDate;
-    }
-
 }

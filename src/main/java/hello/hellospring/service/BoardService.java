@@ -2,6 +2,7 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Board;
 import hello.hellospring.repository.BoardRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,6 +24,7 @@ public class BoardService {
         return board.getId();
     }
     public List<Board> findBoards(){
+
         return boardRepository.findAll();
     }
     public Optional<Board> findOne(Long boardId){

@@ -19,14 +19,19 @@ public class BoardService {
         this.boardRepository = boardRepository;
     }
 
+    // 게시글 생성
     public Long join(Board board){
         boardRepository.save(board);
         return board.getId();
     }
+
+    // 게시글 정보 조회
     public List<Board> findBoards(){
 
         return boardRepository.findAll();
     }
+
+    //게시글 상세 정보 조회
     public Optional<Board> findOne(Long boardId){
         return boardRepository.findById(boardId);
     }

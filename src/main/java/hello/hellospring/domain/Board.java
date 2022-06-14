@@ -30,6 +30,8 @@ public class Board {
     private LocalDateTime createdDate; // 생성일
 
 
+
+
     public Long getId(){
         return id;
     }
@@ -78,5 +80,7 @@ public class Board {
     public void setCreatedDate(LocalDateTime createdDate){
         this.createdDate = createdDate;
     }
+
+
 
 }

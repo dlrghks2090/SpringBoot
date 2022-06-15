@@ -43,6 +43,7 @@ public class BoardController {
         return "board/view";
     }
 
+    // 게시글 생성
     @PostMapping("/board")
     public String addboard(@ModelAttribute BoardForm form){
         Board board = new Board();
@@ -54,6 +55,13 @@ public class BoardController {
         board.setCreatedDate(LocalDateTime.now());
 
         boardService.join(board);
+
+        return "redirect:/";
+    }
+
+    // 게시글 수정
+    @PostMapping("/update")
+    public String reviceboard(){
 
         return "redirect:/";
     }

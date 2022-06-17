@@ -36,4 +36,12 @@ public class BoardService {
         return boardRepository.findById(boardId);
     }
 
+    public void update(Board revice){
+        System.out.println(revice.getId());
+        System.out.println(revice.getTitle());
+        boardRepository.findById(revice.getId());
+        System.out.println(revice.getTitle());
+        return ;
+    }
+
 }

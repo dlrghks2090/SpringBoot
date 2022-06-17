@@ -60,9 +60,26 @@ public class BoardController {
     }
 
     // 게시글 수정
-    @PostMapping("/update")
-    public String reviceboard(){
+    @PutMapping("/update/{id}")
+    public String reviceboard(@PathVariable("id")Long idx, @ModelAttribute BoardForm form){
+        Board revice = boardService.findOne(idx).get();
 
+        System.out.println(revice.getId());
+
+        revice.setTitle(form.getTitle());
+        revice.setWriter(form.getWriter());
+        revice.setContent(form.getContent());
+        revice.setCreatedDate(LocalDateTime.now());
+        revice.setDeleteYn('N');
+        revice.setHits(form.getHits());
+
+        System.out.println(revice.getTitle());
+        
+        boardService.update(revice);
+
+        System.out.println(revice.getTitle());
+
+        System.out.println(boardService.findOne(idx).get());
         return "redirect:/";
     }
 

@@ -35,9 +35,15 @@
                         <td>
                             <a th:href="@{/view/{id}(id = ${board.id})}"  th:text="${board.title}"></a>
                         </td>
-                        <td th:text="${board.writer}"></td>
-                        <td th:text="${board.createdDate}"></td>
-                        <td th:text="${board.hits}"></td>
+                        <td>
+                            <a th:href="@{/view/{id}(id = ${board.id})}" th:text="${board.writer}"></a>
+                        </td>
+                        <td>
+                            <a th:href="@{/view/{id}(id = ${board.id})}" th:text="${board.createdDate}"></a>
+                        </td>
+                        <td>
+                            <a th:href="@{/view/{id}(id = ${board.id})}" th:text="${board.hits}"></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

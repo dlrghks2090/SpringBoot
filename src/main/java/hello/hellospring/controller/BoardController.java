@@ -83,4 +83,14 @@ public class BoardController {
         return "redirect:/";
     }
 
+    // 게시글 삭제
+    @DeleteMapping("/delete/{id}")
+    public String deleteboard(@PathVariable("id")Long idx){
+        System.out.println("id = " + idx +" 번의 삭제 작동에 접근했다.");
+        boardService.delete(idx);
+        System.out.println("삭제 동작 끝!");
+
+        return "redirect:/";
+    }
+
 }

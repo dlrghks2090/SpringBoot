@@ -42,8 +42,11 @@
       <div class="btn_wrap text-center">
         <a href="/list"  class="btn btn-default waves-effect waves-light">뒤로가기</a>
         <button type="submit" class="btn btn-primary waves-effect waves-light">수정하기</button>
-        <button type="button"  class="btn btn-danger waves-effect waves-light">삭제하기</button>
       </div>
+    </form>
+    <form th:action="@{/delete/{id}(id = ${board.id})} " method = "post" class="form-horizontal form-view">
+      <button type="submit" class="btn btn-primary waves-effect waves-light">삭제하기</button>
+      <input type="hidden" name="_method" value="delete" />
     </form>
 
 

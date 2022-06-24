@@ -2,16 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <div class="container">
+    <dic class = "home">
     <div>
-        <h1>Hello Spring</h1>
+        <h1>저희 사이트에 오신걸 환영합니다!</h1>
         <p>회원 기능</p>
         <p>
-            <a href="/login">로그인</a>
+            <a th:href="@{/login}">로그인</a>
             <a href="/members/new">회원 가입</a>
-            <a href="/members">회원 목록</a>
-            <a href="/list">게시판</a>
         </p>
     </div>
+    </dic>
 </div> <!-- /container -->
 </body>
 </html>

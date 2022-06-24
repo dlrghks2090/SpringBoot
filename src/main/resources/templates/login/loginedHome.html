@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <dic class = "loginedHome">
+    <div>
+      <h1>안녕하세요 <a th:text = "${member.name}"></a>님! 반가워요~!</h1>
+
+      <p>회원 기능</p>
+      <p>
+        <a th:href="@{/logout}">로그아웃</a>
+        <a href="/members">회원 목록</a>
+        <a th:href="@{/list}">게시판</a>
+      </p>
+    </div>
+  </dic>
+</div> <!-- /container -->
+</body>
+</html>
